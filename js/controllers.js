@@ -1,7 +1,7 @@
 app.controller('mainController', function($scope, $http, $location){
 
 	$scope.teaSearch = function(){
-		$http.get("" + $scope.tea + '&plot=short&r=json')
+		$http.get("/data.js" + $scope.tea + '&plot=short&r=json')
 		.then(function(response){
 			console.log(response.data)
 			$scope.data = response.data.Search 
@@ -9,7 +9,7 @@ app.controller('mainController', function($scope, $http, $location){
 	}
 
 	$scope.teaResult = function(id){
-		$http.get('http://' + id).then(function(response){
+		$http.get('/data.js' + id).then(function(response){
 			$scope.foo = response.data;
 			$scope.foo1 = id;
 			$location.path("/" + id + '/shoppingCart')
