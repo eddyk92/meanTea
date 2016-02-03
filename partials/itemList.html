@@ -16,40 +16,48 @@
 	</div>
 
 
+<div class = 'container-fluid'>
+	<div class="col-md-12">
+		<select ng-model="sortOrder">
+			<label> Search by category:</label>
+				<option value="dark">dark</option>
+				<option value="cold">cold</option>
+				<option value="awesome">awesome</option>
+				<option value="dry">dry</option>
+				<option value="summer">summer</option>
+				<option value="lucid">lucid</option>
+				<option value="warm">warm</option>
+				<option value="winter">winter</option>
+				<option value="spring">spring</option>
+		</select>
+		<div class="form-group">
+			<label for="teas">Search by name:</label>
+			<input type="text" name='teas' class="form-control" ng-model=''>
+		</div>
 
-<div class="col-md-12">
-	<select ng-model="sortOrder">
-		<label> Search by category:</label>
-			<option value="dark">dark</option>
-			<option value="cold">cold</option>
-			<option value="awesome">awesome</option>
-			<option value="dry">dry</option>
-			<option value="summer">summer</option>
-			<option value="lucid">lucid</option>
-			<option value="warm">warm</option>
-			<option value="winter">winter</option>
-			<option value="spring">spring</option>
-	</select>
-	<div ng-repeat="tea in teaList | orderBy: sortOrder">
-		<ul>
-			<li>
-				{{tea.id }},
-				{{tea.name }},
-				{{tea.ingredients }},
-				{{tea.caffeineScale }},
-				{{tea.price }},
-				{{tea.inStock }},
-				{{tea.rating }},
-				{{tea.imageUrl }},
-				{{tea.__v }},
-				{{tea.categories }}
-			</li>
-		</ul>
-		
-	</div>
-	<div class="form-group">
-		<label for="teas">Search by name:</label>
-		<input ng-repeat="tea in teaList | orderBy: name" type="text" class"form-control">
+		<table>
+			<th>Tea</th>
+			<th>Information</th>
+			<tr ng-repeat='tea in teaList | orderBy: sortOrder'>
+				<td class='teaPicture'>
+					<img src="{{tea.imageUrl}}" alt="{{tea.name}}">
+				</td>
+				<td class='teaData'>
+					<h3>{{tea.name}}</h3>
+					<p><strong>Price: </strong>{{tea.price | currency}}</p>
+					<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
+					<p><strong>ingredients: </strong>{{tea.ingredients}}</p>
+					<p><strong>Rating: </strong>{{tea.rating}}</p>
+					<p><strong>In Stock? </strong>{{tea.inStock}}</p>
+					<p><strong>Categories:</strong></p>
+					<ul>
+						<li ng-repeat="category in tea.categories">
+							{{category}}
+						</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>
 
