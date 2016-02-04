@@ -10,7 +10,7 @@
         <span class="icon-bar">About</span>
         <span class="icon-bar">Contact</span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,8 +27,8 @@
 
 <div class = 'container-fluid'>
 	<div class="col-md-12">
-		<select ng-model="sortOrder">
-			<label> Search by category:</label>
+		<div class="form-group">
+		<label for="sort"> Search by category:<select name='sort' ng-model="sortOrder">
 				<option value="dark">dark</option>
 				<option value="cold">cold</option>
 				<option value="awesome">awesome</option>
@@ -38,20 +38,32 @@
 				<option value="warm">warm</option>
 				<option value="winter">winter</option>
 				<option value="spring">spring</option>
-		</select>
-		<div class="form-group">
+		</select></label>
 			<label for="teas">Search by name:</label>
-			<input type="text" name='teas' class="form-control" ng-model=''>
+			<input type="text" name='teas'>
+		<div id="shoppingCart">
+			<button type="button" class="btn btn-warning">Checkout | Bag: {{}}!</button>
+		</div>
 		</div>
 
 		<table>
 			<th>Tea</th>
-			<th>Information</th>
+			<th>Information
+				<div id='headPrice'>					
+				<label>Sort By Price:
+					<select>
+						<option value="low">low</option>,
+						<option value="high">high</option>,
+					</select>
+				</label>
+				</div>
+			</th>
 			<tr ng-repeat='tea in teaList | orderBy: sortOrder'>
 				<td class='teaPicture'>
 					<img src="{{tea.imageUrl}}" alt="{{tea.name}}">
 				</td>
-				<td class='teaData'>
+				<td>
+					<div  class='teaData'>
 					<h3>{{tea.name}}</h3>
 					<p><strong>Price: </strong>{{tea.price | currency}}</p>
 					<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
@@ -64,49 +76,34 @@
 							{{category}}
 						</li>
 					</ul>
+					</div>
+					<div class='teaSelect'>
+						<h5>Quantity:<select>
+							<option value="1">1</option>,
+							<option value="2">2</option>,
+							<option value="3">3</option>,
+							<option value="4">4</option>,
+							<option value="5">5</option>,
+							<option value="6">6</option>,
+							<option value="7">7</option>,
+							<option value="8">8</option>,
+							<option value="9">9</option>,
+							<option value="10">10</option>
+						</select></h5>
+						<button type="button" class="btn btn-warning">Add to Bag</button>
+					</div>
+				</td>
+				<td>
+
+
 				</td>
 			</tr>
 		</table>
-	<div class="col-md-7" id="form-group">
-		<label for="teas">Search by name:</label>
-		<input>
-	</div>
-		<div class="col-md-2">
-			<button type="button" class="btn btn-warning">Checkout | Bag: {{}}!</button>
-		</div>
+		
 	</div>
 </div>
 
 
 
-<div>
-	<p class="col-md-4">Tea</p>
-	<p class="col-md-6">Information</p>
-	<label class="col-md-2">Sort By Price:
-		<select>
-				<option value="low">low</option>,
-				<option value="high">high</option>,
-		</select>
-	</label>
-</div>
-
-<div class="col-md-12">
-	
-	<h3>Quantity:
-	<select>
-		<option value="1">1</option>,
-		<option value="2">2</option>,
-		<option value="3">3</option>,
-		<option value="4">4</option>,
-		<option value="5">5</option>,
-		<option value="6">6</option>,
-		<option value="7">7</option>,
-		<option value="8">8</option>,
-		<option value="9">9</option>,
-		<option value="10">10</option>
-	</select>
-	</h3>
-	<button type="button" class="btn btn-warning">Add to Bag</button>
-</div>
 
 
