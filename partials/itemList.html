@@ -28,7 +28,8 @@
 <div class = 'container-fluid'>
 	<div class="col-md-12">
 		<div class="form-group">
-		<label for="sort"> Search by category:<select name='sort' ng-model="sortOrder">
+		<label for="sort"> Search by category:
+			<select name='sort' ng-model="sortOrder">
 				<option value="dark">dark</option>
 				<option value="cold">cold</option>
 				<option value="awesome">awesome</option>
@@ -40,7 +41,7 @@
 				<option value="spring">spring</option>
 		</select></label>
 			<label for="teas">Search by name:</label>
-			<input type="text" name='teas'>
+			<input type="search" ng-model = 'search'name='teas'>
 		<div id="shoppingCart">
 			<button type="button" class="btn btn-warning">Checkout | Bag: {{}}!</button>
 		</div>
@@ -58,7 +59,7 @@
 				</label>
 				</div>
 			</th>
-			<tr ng-repeat='tea in teaList | orderBy: sortOrder'>
+			<tr ng-repeat='tea in teaList | filter: sortOrder | filter:search'>
 				<td class='teaPicture'>
 					<img src="{{tea.imageUrl}}" alt="{{tea.name}}">
 				</td>
