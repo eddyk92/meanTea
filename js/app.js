@@ -12,4 +12,12 @@ var app = angular.module('teaApp', ['ngRoute']);
 		})
 	});
 
+
+	app.filter('moveDecimal', function(){
+		return function(num){
+			var newNum = num / Math.pow(10,2);
+				return newNum;
+		}
+	})
+
 	

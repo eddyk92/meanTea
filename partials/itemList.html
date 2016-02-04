@@ -66,9 +66,9 @@
 				<td>
 					<div  class='teaData'>
 					<h3>{{tea.name}}</h3>
-					<p><strong>Price: </strong>{{tea.price | currency}}</p>
+					<p><strong>Price: </strong>{{tea.price | moveDecimal | currency}}</p>
 					<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
-					<p><strong>ingredients: </strong>{{tea.ingredients}}</p>
+					<p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
 					<p><strong>Rating: </strong>{{tea.rating}}</p>
 					<p><strong>In Stock? </strong>{{tea.inStock}}</p>
 					<p><strong>Categories:</strong></p>
