@@ -40,7 +40,24 @@
 				<option value="spring">spring</option>
 		</select></label>
 			<label for="teas">Search by name:</label>
-			<input type="text" name='teas'>
+			<input type="text" name='teas' ng-model="searchText"/>
+			<table>
+				<thread>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Categories</th>
+					</tr>
+				</thread>
+				<tbody>
+					<tr ng-repeat="tea in teaList" | filter:searchText>
+					<td>{{ item.name }}</td>
+					<td>{{ item.price }}</td>
+					<td>{{ item.category }}</td>
+					</tr>
+				</tbody>
+			</table>
+
 		<div id="shoppingCart">
 			<button type="button" class="btn btn-warning">Checkout | Bag: {{}}!</button>
 		</div>
