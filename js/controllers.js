@@ -1,18 +1,22 @@
-app.controller('mainController',['$scope', '$http', '$location', function($scope, $http, $location){
+app.controller('mainController',['$scope', 'shoppingCart', '$http', function($scope, shoppingCart, $http){
 
-		$http.get('../data.json')
-		.then(function(response){
-			$scope.teaList = response.data
-		})
-
-	}])
-
-app.controller('secondController', function($scope, $http, $location){
-	$scope.teaId = $location.$$path.split('/')[1];
-
-	$http.get('http' + $scope.teaId)
+	$http.get('../data.json')
 	.then(function(response){
-		console.log(response.data)
-		$scope.result = response.data;
+		$scope.teaList = response.data
 	})
+
+	$scope.addItem = function(key,value){
+
+	}
+
+	$scope.addToCart = function (quantity, item) {
+		console.log(quantity, "quantity");
+		console.log(item, "item");
+	}
+}]) // END CONTROLLER
+
+
+
+app.controller('cartController', function($scope, $http){
+
 })
