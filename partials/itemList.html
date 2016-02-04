@@ -43,7 +43,7 @@
 			<label for="teas">Search by name:</label>
 			<input type="search" ng-model = 'search'name='teas'>
 		<div id="shoppingCart">
-			<button type="button" class="btn btn-warning">Checkout | Bag: {{}}!</button>
+			<button onclick="window.location.href='partials/shoppingCart.html'" class="btn btn-warning">Checkout | Bag: {{ tea.qty }}!</button>
 		</div>
 		</div>
 
@@ -91,7 +91,11 @@
 							<option value="9">9</option>,
 							<option value="10">10</option>
 						</select></h5>
-						<button type="button" class="btn btn-warning">Add to Bag</button>
+						<button ng-click="add()" type="button" class="btn btn-warning">Add to Bag</button>
+						<ul>
+							<li ng-repeat="tea">{{ teaData }}</li>
+						</ul>
+						
 					</div>
 				</td>
 				<td>

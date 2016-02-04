@@ -1,29 +1,60 @@
-<div class="col-md-12">
-	<p>Tea</p>
-	<p>Information</p>
-	<label>Sort By Price:</label>
-	<select>
-		<ul>
-			<li>low</li>
-			<li>high</li>
-		</ul>
-	</select>
-</div>
+		<link rel="stylesheet" type="text/css" href="partials/stylesheet/shoppingCart.css">
+		<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous"> -->
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+
+		<script src="js/app.js"></script>
+		<script src="js/controllers.js"></script>
+
+
+
+
+<h1>Welcome to Mean Tea!</h1>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Home</span>
+        <span class="icon-bar">About</span>
+        <span class="icon-bar">Contact</span>
+      </button>
+      <a class="navbar-brand"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 
 <div>
-	<h4>Quantity:</h4>
-	<select>
-		<ul>
-			<li>1</li>,
-			<li>2</li>,
-			<li>3</li>,
-			<li>4</li>,
-			<li>5</li>,
-			<li>6</li>,
-			<li>7</li>,
-			<li>8</li>,
-			<li>9</li>
-		</ul>
-	</select>
-	<button type="button" class="btn btn-warning">Add to Bag</button>
+	<h1>My Shopping Bag</h1>
 </div>
+<table>
+	<div class="col-md-10">
+		<p>Product</p>
+		<p>Quanity</p>
+		<p>Sub-total:</p>
+	</div>
+	<div>
+		<button type="button" class="btn btn-primary">Edit</button>
+		<button type="button" class="btn btn-warning">Remove</button>
+	</div>
+
+</table>
