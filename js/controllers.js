@@ -33,9 +33,14 @@ app.controller('cartController', function($scope, shoppingService, $http){
 
 
 	$scope.subTotal = function(price,qty){
-		console.log(shoppingService.subTotal(price,qty)	)
 		return shoppingService.subTotal(price,qty)	
 	}
+
+	$scope.grandTotal = function(cart){
+		
+		return  shoppingService.grandTotal(cart)
+	}
+
 
 })
 
