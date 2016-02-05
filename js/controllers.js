@@ -1,7 +1,5 @@
 app.controller('mainController',['$scope', 'shoppingService', '$http','$location', function($scope, shoppingService, $http, $location){
 
-
-
 	$http.get('../data.json')
 	.then(function(response){
 		$scope.teaList = response.data
@@ -9,18 +7,18 @@ app.controller('mainController',['$scope', 'shoppingService', '$http','$location
 
 	$scope.shoppingCart = []
 
-	$scope.addToCart = function (item, quantity) {
-		$scope.shoppingCart.push({[item] : quantity})
-
-		console.log(quantity, "quantity");
-		console.log(item, "item");
-		console.log($scope.shoppingCart);
+	$scope.addToCart = function (item,quantity,image,caffeine,ing,price,rating) {
+		$scope.shoppingCart.push({ Name:item,
+								  Quantity: quantity,
+								  imageUrl: image,
+								  Caffeine:caffeine,
+								  Ingredients: ing,
+								  Price: price,
+								  Rating: rating})
 	}
 
 	$scope.checkout = function(){
 		shoppingService.shoppingCart = $scope.shoppingCart
-		console.log('cart:', $scope.shoppingCart)
-		console.log('ServiceBag:', shoppingService.shoppingCart)
 		$scope.shoppingCart = [];
 
 		$location.path('/shoppingcart')
@@ -30,5 +28,18 @@ app.controller('mainController',['$scope', 'shoppingService', '$http','$location
 
 
 app.controller('cartController', function($scope, shoppingService, $http){
+
 	$scope.shoppingCart = shoppingService.shoppingCart;
+
+
+	$scope.subTotal = function(price,qty){
+		console.log(shoppingService.subTotal(price,qty)	)
+		return shoppingService.subTotal(price,qty)	
+	}
+
 })
+
+
+
+
+

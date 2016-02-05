@@ -1,31 +1,25 @@
-<div class="col-md-12">
-	<p>Tea</p>
-	<p>Information</p>
-	<label>Sort By Price:</label>
-	<select>
-		<ul>
-			<li>low</li>
-			<li>high</li>
-		</ul>
-	</select>
-</div>
+<div class = 'container-fluid'>	
+	<div class="col-md-12">
 
-<div>
-	<h4>Quantity:</h4>
-	<select>
-		<ul>
-			<li>1</li>,
-			<li>2</li>,
-			<li>3</li>,
-			<li>4</li>,
-			<li>5</li>,
-			<li>6</li>,
-			<li>7</li>,
-			<li>8</li>,
-			<li>9</li>
-		</ul>
-	</select>
+		<h3>Grand Total: {{grandTotal | moveDecimal | currency}}</h3>
+		<table>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Sub-Total</th>
+			<tr ng-repeat='tea in shoppingCart'>
+				<td>
+					<h3>{{tea.Name}}</h3>
+					<img alt="{{tea.Name}}" ng-src="{{tea.imageUrl}}">
+					<p><strong>Caffeine Scale: </strong>{{tea.Caffeine}}</p>
+					<p><strong>Ingredients: </strong>{{tea.Ingredients}}</p>
+					<p><strong>Rating: </strong>{{tea.Rating}}</p>
+				</td>
+				<td>{{tea.Quantity}}</td>
+				<td>{{ subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
+			</tr>
+		</table>
+				<p>{{ shoppingCart}}</p>
 
-	<p>{{shoppingCart}}</p>
-	<button type="button" class="btn btn-warning">Add to Bag</button>
+		<button type="button" class="btn btn-warning">Add to Bag</button>
+	</div>
 </div>

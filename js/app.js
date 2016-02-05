@@ -20,4 +20,13 @@ var app = angular.module('teaApp', ['ngRoute']);
 		}
 	})
 
+	app.filter('checkStock', function(){
+		return function(str){
+			if (str){
+				return 'Yes'
+			} else {
+				return 'No'
+			}
+		}
+	})
 	

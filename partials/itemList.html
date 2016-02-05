@@ -71,7 +71,7 @@
 					<p><strong>Caffeine Scale: </strong>{{tea.caffeineScale}}</p>
 					<p><strong>Ingredients: </strong>{{tea.ingredients}}</p>
 					<p><strong>Rating: </strong>{{tea.rating}}</p>
-					<p><strong>In Stock? </strong>{{tea.inStock}}</p>
+					<p><strong>In Stock? </strong>{{tea.inStock | checkStock}}</p>
 					<p><strong>Categories:</strong></p>
 					<ul>
 						<li ng-repeat="category in tea.categories">
@@ -92,7 +92,7 @@
 							<option value="9">9</option>
 							<option value="10">10</option>
 						</select></h5>
-						<button type="button" class="btn btn-warning" ng-click="addToCart(tea.name, orderQuantity)">Add to Bag</button>
+						<button type="button" class="btn btn-warning" ng-click="addToCart(tea.name, orderQuantity, tea.imageUrl, tea.caffeineScale, tea.ingredients, tea.price, tea.rating)">Add to Bag</button>
 					</div>
 				</td>
 				<td>
@@ -101,7 +101,6 @@
 				</td>
 			</tr>
 		</table>
-		
 	</div>
 </div>
 
