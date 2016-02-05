@@ -1,31 +1,44 @@
+<h1>Welcome to Mean Tea!</h1>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Home</span>
+        <span class="icon-bar">About</span>
+        <span class="icon-bar">Contact</span>
+      </button>
+      <a class="navbar-brand"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+<span>
+<h3>My Shopping Bag</h1>
+<h3>Order total: {{ tea.price * qty | moveDecimal | currency }}</h1>
+</span>
+
+
 <div class="col-md-12">
 	<p>Tea</p>
 	<p>Information</p>
-	<label>Sort By Price:</label>
-	<select>
-		<ul>
-			<li>low</li>
-			<li>high</li>
-		</ul>
-	</select>
-</div>
-
-<div>
-	<h4>Quantity:</h4>
-	<select>
-		<ul>
-			<li>1</li>,
-			<li>2</li>,
-			<li>3</li>,
-			<li>4</li>,
-			<li>5</li>,
-			<li>6</li>,
-			<li>7</li>,
-			<li>8</li>,
-			<li>9</li>
-		</ul>
-	</select>
-
 	<p>{{shoppingCart}}</p>
-	<button type="button" class="btn btn-warning">Add to Bag</button>
+	<button ng-click="delete($shoppingCart)" class="btn btn-warning">Remove</button>
+	<button type="button" class="btn btn-warning">Edit</button>
+	
 </div>
+

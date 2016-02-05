@@ -31,4 +31,13 @@ app.controller('mainController',['$scope', 'shoppingService', '$http','$location
 
 app.controller('cartController', function($scope, shoppingService, $http){
 	$scope.shoppingCart = shoppingService.shoppingCart;
-})
+
+});
+
+
+
+
+
+
+
+
