@@ -37,6 +37,10 @@ app.controller('cartController', function($scope, shoppingService, $http){
 		return shoppingService.subTotal(price,qty)	
 	}
 
+	$scope.remove = function(index){
+		$scope.shoppingcart.splice(index, 1);
+	};
+
 })
 
 

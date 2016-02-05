@@ -7,6 +7,10 @@ table, th, td {
 	border: 1px solid grey;
 }
 
+h1{
+	color: orange;
+}
+
 .teaPicture {
 	width: 219px;
 	height: 235px;
