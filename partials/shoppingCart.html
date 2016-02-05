@@ -1,3 +1,4 @@
+
 <h1>Welcome to Mean Tea!</h1>
 
 <nav class="navbar navbar-default">
@@ -40,5 +41,32 @@
 	<button ng-click="delete($shoppingCart)" class="btn btn-warning">Remove</button>
 	<button type="button" class="btn btn-warning">Edit</button>
 	
+</div>
+
+
+<div class = 'container-fluid'>	
+	<div class="col-md-12">
+
+		<h3>Grand Total: {{grandTotal | moveDecimal | currency}}</h3>
+		<table>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Sub-Total</th>
+			<tr ng-repeat='tea in shoppingCart'>
+				<td>
+					<h3>{{tea.Name}}</h3>
+					<img alt="{{tea.Name}}" ng-src="{{tea.imageUrl}}">
+					<p><strong>Caffeine Scale: </strong>{{tea.Caffeine}}</p>
+					<p><strong>Ingredients: </strong>{{tea.Ingredients}}</p>
+					<p><strong>Rating: </strong>{{tea.Rating}}</p>
+				</td>
+				<td>{{tea.Quantity}}</td>
+				<td>{{ subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
+			</tr>
+		</table>
+				<p>{{ shoppingCart}}</p>
+
+		<button type="button" class="btn btn-warning">Add to Bag</button>
+	</div>
 </div>
 
