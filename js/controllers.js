@@ -37,6 +37,7 @@ app.controller('cartController', function($scope, shoppingService, $http){
 	}
 
 	$scope.grandTotal = function(cart){
+		
 		return  shoppingService.grandTotal(cart)
 	}
 
