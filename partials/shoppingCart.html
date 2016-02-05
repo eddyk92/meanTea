@@ -36,7 +36,7 @@
 <div class = 'container-fluid'>	
 	<div class="col-md-12">
 
-		<h3>Grand Total: {{grandTotal | moveDecimal | currency}}</h3>
+		<h3>Grand Total: {{grandTotal(shoppingCart)|moveDecimal|currency}}</h3>
 		<table>
 			<th>Product</th>
 			<th>Quantity</th>
@@ -58,6 +58,7 @@
 
 		</table>
 				<p>{{ shoppingCart}}</p>
+
 	</div>
 </div>
 
