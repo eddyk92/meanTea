@@ -1,7 +1,7 @@
 <div class = 'container-fluid'>	
 	<div class="col-md-12">
 
-		<h3>Grand Total: {{grandTotal | moveDecimal | currency}}</h3>
+		<h3>Grand Total: {{grandTotal(shoppingCart)|moveDecimal|currency}}</h3>
 		<table>
 			<th>Product</th>
 			<th>Quantity</th>
@@ -15,10 +15,10 @@
 					<p><strong>Rating: </strong>{{tea.Rating}}</p>
 				</td>
 				<td>{{tea.Quantity}}</td>
-				<td>{{ subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
+				<td>{{subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
 			</tr>
 		</table>
-				<p>{{ shoppingCart}}</p>
+				<p>{{shoppingCart}}</p>
 
 		<button type="button" class="btn btn-warning">Add to Bag</button>
 	</div>
