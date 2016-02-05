@@ -44,7 +44,7 @@
 			<label for="teas">Search by name:</label>
 			<input type="search" ng-model = 'search'name='teas'>
 		<div id="shoppingCart">
-			<button type="button" class="btn btn-warning">Checkout | Bag: {{ (shoppingCart.length)|| 'Empty'}}!</button>
+			<button type="button" class="btn btn-warning" ng-click='checkout()'>Checkout | Bag: {{ (shoppingCart.length)|| 'Empty'}}!</button>
 		</div>
 		</div>
 
@@ -62,7 +62,7 @@
 			</th>
 			<tr ng-repeat='tea in teaList | filter: sortOrder | orderBy: sortPrice | filter:search'>
 				<td class='teaPicture'>
-					<img src="{{tea.imageUrl}}" alt="{{tea.name}}">
+					<img ng-src="{{tea.imageUrl}}" alt="{{tea.name}}">
 				</td>
 				<td>
 					<div  class='teaData'>
@@ -81,7 +81,7 @@
 					</div>
 					<div class='teaSelect'>
 						<h5>Quantity:<select ng-model='orderQuantity'>
-							<option value="1"></option>
+							<option selected='selected' value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
@@ -92,8 +92,7 @@
 							<option value="9">9</option>
 							<option value="10">10</option>
 						</select></h5>
-						<button type="button" class="btn btn-warning" ng-click="addToCart(orderQuantity, tea.name)">Add to Bag</button>
-						<p>{{orderQuantity}}</p>
+						<button type="button" class="btn btn-warning" ng-click="addToCart(tea.name, orderQuantity)">Add to Bag</button>
 					</div>
 				</td>
 				<td>

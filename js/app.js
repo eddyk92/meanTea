@@ -6,7 +6,7 @@ var app = angular.module('teaApp', ['ngRoute']);
 			templateUrl: "partials/itemList.html",
 			controller: "mainController"
 		})
-		.when('/shoppingCart', {
+		.when('/shoppingcart', {
 			templateUrl: "partials/shoppingCart.html",
 			controller: "cartController"
 		})

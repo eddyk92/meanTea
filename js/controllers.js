@@ -1,22 +1,34 @@
-app.controller('mainController',['$scope', 'shoppingCart', '$http', function($scope, shoppingCart, $http){
+app.controller('mainController',['$scope', 'shoppingService', '$http','$location', function($scope, shoppingService, $http, $location){
+
+
 
 	$http.get('../data.json')
 	.then(function(response){
 		$scope.teaList = response.data
 	})
 
-	$scope.addItem = function(key,value){
+	$scope.shoppingCart = []
 
-	}
+	$scope.addToCart = function (item, quantity) {
+		$scope.shoppingCart.push({[item] : quantity})
 
-	$scope.addToCart = function (quantity, item) {
 		console.log(quantity, "quantity");
 		console.log(item, "item");
+		console.log($scope.shoppingCart);
+	}
+
+	$scope.checkout = function(){
+		shoppingService.shoppingCart = $scope.shoppingCart
+		console.log('cart:', $scope.shoppingCart)
+		console.log('ServiceBag:', shoppingService.shoppingCart)
+		$scope.shoppingCart = [];
+
+		$location.path('/shoppingcart')
 	}
 }]) // END CONTROLLER
 
 
 
-app.controller('cartController', function($scope, $http){
-
+app.controller('cartController', function($scope, shoppingService, $http){
+	$scope.shoppingCart = shoppingService.shoppingCart;
 })
