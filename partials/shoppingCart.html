@@ -33,17 +33,6 @@
 <h3>Order total: {{ tea.price * qty | moveDecimal | currency }}</h1>
 </span>
 
-
-<div class="col-md-12">
-	<p>Tea</p>
-	<p>Information</p>
-	<p>{{shoppingCart}}</p>
-	<button ng-click="delete($shoppingCart)" class="btn btn-warning">Remove</button>
-	<button type="button" class="btn btn-warning">Edit</button>
-	
-</div>
-
-
 <div class = 'container-fluid'>	
 	<div class="col-md-12">
 
@@ -62,11 +51,13 @@
 				</td>
 				<td>{{tea.Quantity}}</td>
 				<td>{{ subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
+					<!-- <p>{{shoppingCart}}</p> -->
+				<td>	<button ng-click="delete($shoppingCart)" class="btn btn-warning">Remove</button>
+					<button type="button" class="btn btn-warning">Edit</button></td>
 			</tr>
+
 		</table>
 				<p>{{ shoppingCart}}</p>
-
-		<button type="button" class="btn btn-warning">Add to Bag</button>
 	</div>
 </div>
 
