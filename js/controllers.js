@@ -37,8 +37,9 @@ app.controller('cartController', function($scope, shoppingService, $http){
 	}
 
 
-	$scope.remove = function(index){
-		$scope.shoppingcart.splice(index, 1);
+	$scope.remove = function(item){
+		return shoppingService.shoppingCart.splice(
+				shoppingService.shoppingCart.indexOf(item),1);
 	};
 
 	$scope.grandTotal = function(cart){

@@ -52,7 +52,7 @@
 				<td>{{tea.Quantity}}</td>
 				<td>{{ subTotal(tea.Price,tea.Quantity) | moveDecimal | currency}}</td>
 					<!-- <p>{{shoppingCart}}</p> -->
-				<td>	<button ng-click="delete($shoppingCart)" class="btn btn-warning">Remove</button>
+				<td>	<button ng-click="remove(tea)" class="btn btn-warning">Remove</button>
 					<button type="button" class="btn btn-warning">Edit</button></td>
 			</tr>
 
