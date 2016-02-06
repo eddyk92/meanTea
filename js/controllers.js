@@ -33,7 +33,6 @@ app.controller('cartController', function($scope, shoppingService, $http){
 
 	$scope.changeEdit = function(){
 		$scope.editButton = !$scope.editButton
-		console.log('yo', $scope.editButton)
 	}
 
 	$scope.subTotal = function(price,qty){
