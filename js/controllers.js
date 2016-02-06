@@ -28,9 +28,13 @@ app.controller('mainController',['$scope', 'shoppingService', '$http','$location
 
 
 app.controller('cartController', function($scope, shoppingService, $http){
-
+	$scope.editButton = false;
 	$scope.shoppingCart = shoppingService.shoppingCart;
 
+	$scope.changeEdit = function(){
+		$scope.editButton = !$scope.editButton
+		console.log('yo', $scope.editButton)
+	}
 
 	$scope.subTotal = function(price,qty){
 		return shoppingService.subTotal(price,qty)	
@@ -47,9 +51,11 @@ app.controller('cartController', function($scope, shoppingService, $http){
 		return  shoppingService.grandTotal(cart)
 	}
 
-
-
+	$scope.finish = function(){
+		$scope.shoppingCart = [];
+	}
 })
+
 
 
 
